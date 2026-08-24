@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ruas e Pavimentação - Conecta Paulista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <a class="pular" href="#conteudo">Pular o conteúdo</a>
+
+    <div class="barra-gov">
+        <div class="container barra-gov__linha">
+            <span class="barra-gov__marca">Prefeitura Municipal do Paulista - Pernambuco</span>
+            <nav class="barra-gov__links" aria-label="Links institucionais">
+                <a href="#">Transparência</a><a href="#">Ouvidoria</a><a href="#">Diário Oficial</a><a href="#">Acessibilidade</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="cabecalho" id="topo">
+        <div class="container cabecalho__linha">
+            <a class="marca" href="index.html">
+                <span class="marca__logo" aria-hidden="true"><span class="marca__logo-texto">Logo</span></span>
+                <span class="marca__nome"><strong>Conecta</strong> Paulista <small>Portal de Serviços</small></span>
+            </a>
+            <button class="menu-botao" id="menu-botao" aria-expanded="false" aria-controls="menuPrincipal">
+                <span class="menu-botao__barras" aria-hidden="true"></span> Menu
+            </button>
+            <nav class="menu" id="menuPrincipal" aria-label="Menu principal">
+                <ul class="menu__lista">
+                    <li><a href="index.html#destaques">Destaques</a></li>
+                    <li><a href="index.html#servicos-municipais">Serviços</a></li>
+                    <li><a href="index.html#servicos-essenciais">Serviços Essenciais</a></li>
+                    <li><a href="index.html#sede">A Prefeitura</a></li>
+                    <li><a class="menu__entrar" href="#">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="cat-hero">
+            <div class="container cat-hero__grade">
+                <a href="index.html#servicos-essenciais" class="link-mais" style="color:var(--sol);margin-bottom:12px;display:inline-block;">← Voltar aos Serviços Essenciais</a>
+                <p class="etiqueta">Serviço Público Essencial · 04</p>
+                <h1>Ruas e Pavimentação</h1>
+                <p>Solicite tapa-buraco, pavimentação, recuperação de calçadas, meio-fio e manutenção de vias públicas.</p>
+            </div>
+        </section>
+
+        <section class="cat-servicos">
+            <div class="container">
+                <div class="cat-servicos__grid">
+                    <div class="cat-servico-item" onclick="abrirModal('Tapa-buraco')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar tapa-buraco</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Recuperação de pavimento')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar recuperação de pavimento</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Rua danificada')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Comunicar rua danificada</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Pavimentação de rua')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar pavimentação de rua</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Recuperação de calçamento')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar recuperação de calçamento</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Manutenção de meio-fio')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar manutenção de meio-fio</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Recuperação de calçada pública')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar recuperação de calçada pública</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Afundamento de via')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Comunicar afundamento de via</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Erosão em via pública')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Comunicar erosão em via pública</span>
+                    </div>
+                    <div class="cat-servico-item" onclick="abrirModal('Manutenção de praça')">
+                        <div class="cat-servico-item__icone"><svg viewBox="0 0 24 24" width="20" height="20"><rect x="1" y="6" width="22" height="12" rx="2"/></svg></div>
+                        <span>Solicitar manutenção de praça</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Solicitação -->
+    <div class="modal-overlay" id="modal-solicitacao">
+        <div class="modal">
+            <div class="modal__header">
+                <h2 id="modal-nome-servico">Solicitar Serviço</h2>
+                <button class="modal__fechar" onclick="fecharModal()" aria-label="Fechar">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <form onsubmit="enviarSolicitacao(event)">
+                    <div class="modal__campo">
+                        <label>📍 Informe o endereço</label>
+                        <input type="text" placeholder="Rua, número, bairro, ponto de referência" required>
+                    </div>
+                    <div class="modal__campo">
+                        <label>📸 Adicione uma foto</label>
+                        <input type="file" accept="image/*">
+                    </div>
+                    <div class="modal__campo">
+                        <label>📝 Descreva o problema</label>
+                        <textarea placeholder="Descreva com detalhes a situação encontrada..." required></textarea>
+                    </div>
+                    <div class="modal__campo">
+                        <label>📞 Informe seus dados</label>
+                        <input type="text" placeholder="Nome completo" required style="margin-bottom:10px;">
+                        <input type="tel" placeholder="Telefone / WhatsApp" required>
+                    </div>
+                    <button type="submit" class="modal__submit">✅ Enviar solicitação</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmação -->
+    <div class="modal-overlay" id="modal-confirmacao">
+        <div class="modal">
+            <div class="modal-confirm">
+                <div class="modal-confirm__icone">
+                    <svg viewBox="0 0 24 24" width="36" height="36"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <h2>Solicitação concluída!</h2>
+                <div class="modal-confirm__protocolo" id="confirm-protocolo">Protocolo nº 2026-000123</div>
+                <p style="margin-top:12px;color:var(--cinza);">Solicitação recebida com sucesso.</p>
+                <div class="modal-confirm__status">Em análise</div>
+                <br>
+                <a href="index.html" class="botao" onclick="fecharConfirmacao()">Voltar ao início</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape__base">
+                <div class="rodape__base-linha">
+                    <p>&copy; 2026 Prefeitura Municipal do Paulista. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>
