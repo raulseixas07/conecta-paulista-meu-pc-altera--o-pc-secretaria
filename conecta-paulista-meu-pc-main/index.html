@@ -15,6 +15,45 @@
 <body>
     <a class="pular" href="#conteudo">Pular o conteúdo</a>
 
+    <!-- BARRA DE ACESSIBILIDADE E MENU OCULTO -->
+    <div class="barra-acessibilidade" id="barraAcessibilidade">
+        <div class="container barra-acessibilidade__container">
+            <button class="barra-acessibilidade__menu-btn" id="btnMenuAcessibilidade" aria-expanded="false" aria-controls="menuAcessibilidadeOculto">
+                <span class="barra-acessibilidade__hamburguer" aria-hidden="true">☰</span>
+                <span class="barra-acessibilidade__texto">MENU ACESSIBILIDADE</span>
+            </button>
+            <div class="barra-acessibilidade__controles">
+                <button type="button" class="barra-acessibilidade__btn" id="btnContraste" aria-label="Alto Contraste" title="Alto Contraste">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+                </button>
+                <button type="button" class="barra-acessibilidade__btn" id="btnAumentarFonte" aria-label="Aumentar Fonte" title="Aumentar Fonte">A+</button>
+                <button type="button" class="barra-acessibilidade__btn" id="btnResetarFonte" aria-label="Fonte Normal" title="Fonte Normal">A</button>
+                <button type="button" class="barra-acessibilidade__btn" id="btnDiminuirFonte" aria-label="Diminuir Fonte" title="Diminuir Fonte">A-</button>
+                <button type="button" class="barra-acessibilidade__btn barra-acessibilidade__icone-libra" id="btnAcessibilidadeGeral" aria-label="Recursos de Acessibilidade" title="Recursos de Acessibilidade">
+                    <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.5 3h5v2h-1.5v7h-2v-7H9.5z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- MENU OCULTO DE ACESSIBILIDADE -->
+        <div class="menu-acessibilidade-oculto" id="menuAcessibilidadeOculto" aria-hidden="true">
+            <div class="container menu-acessibilidade-oculto__conteudo">
+                <div class="menu-acessibilidade-oculto__atalhos">
+                    <a href="#conteudo" class="atalho-acessibilidade">Ir para Menu <span class="badge-num">1</span></a>
+                    <a href="#busca" class="atalho-acessibilidade">Ir para Buscador <span class="badge-num">2</span></a>
+                    <a href="#topo" class="atalho-acessibilidade">Ir para Rodapé <span class="badge-num">3</span></a>
+                    <a href="#servicos-municipais" class="atalho-acessibilidade">Ir para o Mapa do Site <span class="badge-num">4</span></a>
+                </div>
+                <div class="menu-acessibilidade-oculto__topo-acao">
+                    <button class="menu-acessibilidade-oculto__fechar" id="btnFecharMenuAcessibilidade" aria-label="Recolher menu">
+                        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 15l-6-6-6 6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- ========= BARRA INSTITUCIONAL ====== -->
     <div class="barra-gov">
         <div class="container barra-gov__linha">
@@ -32,12 +71,10 @@
     <header class="cabecalho" id="topo">
         <div class="container cabecalho__linha">
             <a class="marca" href="#topo">
-                <span class="marca__logo" aria-hidden="true">
-                    <span class="marca__logo-texto">Logo</span>
-                </span>
+                <img class="marca__logo" src="./assets/logo paulista digital.png" alt="Prefeitura Municipal do Paulista">
                 <span class="marca__nome">
-                    <strong>Conecta</strong>
-                    Paulista
+                    <strong>Paulista</strong>
+                    Digital
                     <small>Portal de Serviços</small>
                 </span>
             </a>
@@ -67,9 +104,7 @@
                 <section class="hero hero--compact" id="busca" aria-labelledby="busca-titulo">
                     <div class="hero__grade">
                         <div class="hero__texto">
-                            <img class="hero__logo"
-                                 src="./assets/logo-paulista.png"
-                                 alt="Prefeitura Municipal do Paulista — Em um novo tempo">
+                            
                             <p class="etiqueta">Carta de Serviços ao Usuário</p>
                             <h1 class="hero__titulo" id="busca-titulo">
                                 O que você precisa
@@ -176,93 +211,6 @@
             <!-- Faixa extraída da divisória de referência enviada. -->
             <div class="banner-carrossel__divisoria" aria-hidden="true">
                 <img src="./assets/divisoria-eventos.png" alt="">
-            </div>
-        </section>
-
-        <!-- ====== EM EVIDÊNCIA / DESTAQUES ====== -->
-        <section class="secao" id="destaques">
-            <div class="container">
-                <header class="secao__topo">
-                    <div>
-                        <p class="etiqueta etiqueta--escura">Em evidência</p>
-                        <h2 class="secao__titulo">Destaques</h2>
-                        <p class="secao__apoio">Acesso rápido aos principais serviços e áreas da Prefeitura.</p>
-                    </div>
-                </header>
-                <div class="destaques-grid">
-                    <a href="limpeza-urbana.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">01</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Limpeza Urbana</h3>
-                            <p>Coleta de lixo, varrição, capinação e remoção de entulho.</p>
-                        </div>
-                    </a>
-                    <a href="arvores-areas-verdes.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">02</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Árvores e Áreas Verdes</h3>
-                            <p>Poda, plantio, remoção e manutenção de áreas verdes.</p>
-                        </div>
-                    </a>
-                    <a href="iluminacao-publica.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">03</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Iluminação Pública</h3>
-                            <p>Lâmpadas apagadas, postes danificados e manutenção.</p>
-                        </div>
-                    </a>
-                    <a href="ruas-pavimentacao.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">04</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Ruas e Pavimentação</h3>
-                            <p>Tapa-buraco, pavimentação, calçadas e meio-fio.</p>
-                        </div>
-                    </a>
-                    <a href="drenagem-chuvas.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">05</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Drenagem e Chuvas</h3>
-                            <p>Canais, galerias, bueiros e prevenção de alagamentos.</p>
-                        </div>
-                    </a>
-                    <a href="agua-esgoto-saneamento.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">06</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Água, Esgoto e Saneamento</h3>
-                            <p>Vazamentos, esgoto, rede de drenagem e saneamento.</p>
-                        </div>
-                    </a>
-                    <a href="transito-mobilidade.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">07</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Trânsito e Mobilidade</h3>
-                            <p>Sinalização, semáforos, faixas e transporte público.</p>
-                        </div>
-                    </a>
-                    <a href="pracas-parques.html" class="destaque-card">
-                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
-                            <span class="destaque-card__num">08</span>
-                        </div>
-                        <div class="destaque-card__info">
-                            <h3>Praças, Parques e Espaços Públicos</h3>
-                            <p>Manutenção, limpeza e conservação de espaços coletivos.</p>
-                        </div>
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -467,6 +415,95 @@
             </div>
         </section>
 
+
+         <!-- ====== EM EVIDÊNCIA / DESTAQUES ====== -->
+        <section class="secao" id="destaques">
+            <div class="container">
+                <header class="secao__topo">
+                    <div>
+                        <p class="etiqueta etiqueta--escura">Em evidência</p>
+                        <h2 class="secao__titulo">Destaques</h2>
+                        <p class="secao__apoio">Acesso rápido aos principais serviços e áreas da Prefeitura.</p>
+                    </div>
+                </header>
+                <div class="destaques-grid">
+                    <a href="limpeza-urbana.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">01</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Limpeza Urbana</h3>
+                            <p>Coleta de lixo, varrição, capinação e remoção de entulho.</p>
+                        </div>
+                    </a>
+                    <a href="arvores-areas-verdes.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">02</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Árvores e Áreas Verdes</h3>
+                            <p>Poda, plantio, remoção e manutenção de áreas verdes.</p>
+                        </div>
+                    </a>
+                    <a href="iluminacao-publica.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">03</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Iluminação Pública</h3>
+                            <p>Lâmpadas apagadas, postes danificados e manutenção.</p>
+                        </div>
+                    </a>
+                    <a href="ruas-pavimentacao.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">04</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Ruas e Pavimentação</h3>
+                            <p>Tapa-buraco, pavimentação, calçadas e meio-fio.</p>
+                        </div>
+                    </a>
+                    <a href="drenagem-chuvas.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">05</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Drenagem e Chuvas</h3>
+                            <p>Canais, galerias, bueiros e prevenção de alagamentos.</p>
+                        </div>
+                    </a>
+                    <a href="agua-esgoto-saneamento.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">06</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Água, Esgoto e Saneamento</h3>
+                            <p>Vazamentos, esgoto, rede de drenagem e saneamento.</p>
+                        </div>
+                    </a>
+                    <a href="transito-mobilidade.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">07</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Trânsito e Mobilidade</h3>
+                            <p>Sinalização, semáforos, faixas e transporte público.</p>
+                        </div>
+                    </a>
+                    <a href="pracas-parques.html" class="destaque-card">
+                        <div class="destaque-card__imagem" data-slot="Foto 400x300">
+                            <span class="destaque-card__num">08</span>
+                        </div>
+                        <div class="destaque-card__info">
+                            <h3>Praças, Parques e Espaços Públicos</h3>
+                            <p>Manutenção, limpeza e conservação de espaços coletivos.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
         <!-- ====== ONDE NOS ENCONTRAR / SEDE ====== -->
         <section class="secao secao--fundo" id="sede">
             <div class="container">
@@ -644,5 +681,6 @@
             startAuto();
         })();
     </script>
+    <script src="./scripts.js"></script>
 </body>
 </html>
