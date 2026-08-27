@@ -57,7 +57,11 @@
     <!-- ========= BARRA INSTITUCIONAL ====== -->
     <div class="barra-gov">
         <div class="container barra-gov__linha">
-            <span class="barra-gov__marca">Prefeitura Municipal do Paulista - Pernambuco</span>
+            <span class="barra-gov__marca">
+                <span class="barra-gov__marca-txt barra-gov__marca-txt--completa">Prefeitura Municipal do Paulista - Pernambuco</span>
+                <span class="barra-gov__marca-txt barra-gov__marca-txt--curta" aria-hidden="true">Prefeitura do Paulista - PE</span>
+                <span class="barra-gov__marca-txt barra-gov__marca-txt--mini" aria-hidden="true">Paulista - PE</span>
+            </span>
             <nav class="barra-gov__links" aria-label="Links institucionais">
                 <a href="#">Transparência</a>
                 <a href="#">Ouvidoria</a>
@@ -71,7 +75,7 @@
     <header class="cabecalho" id="topo">
         <div class="container cabecalho__linha">
             <a class="marca" href="#topo">
-                <img class="marca__logo" src="./assets/logo paulista digital.png" alt="Prefeitura Municipal do Paulista">
+                <img class="marca__logo" src="./assets/logo paulista digital.png" alt="Paulista Digital - Prefeitura Municipal do Paulista">
                 <span class="marca__nome">
                     <strong>Paulista</strong>
                     Digital
@@ -130,9 +134,18 @@
                                 <a href="#">Ouvidoria</a>
                             </div>
                         </div>
-                        <img class="hero__familia"
-                             src="./assets/familia-conecta-paulista.png"
-                             alt="Ilustração de uma família de diferentes gerações usando celulares">
+                        <!-- Ilustração decorativa: só é baixada em telas acima de 1024px
+                             (desktop). Em celular/tablet o navegador carrega apenas o
+                             pixel transparente e o CSS oculta o elemento. -->
+                        <picture class="hero__familia-fonte">
+                            <source media="(min-width:1025px)" srcset="./assets/familia-conecta-paulista.png">
+                            <img class="hero__familia"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt=""
+                                 aria-hidden="true"
+                                 decoding="async"
+                                 loading="lazy">
+                        </picture>
                     </div>
                 </section>
 
