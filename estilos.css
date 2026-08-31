@@ -1319,3 +1319,83 @@ body.alto-contraste .menu-acessibilidade-oculto {
   .menu__entrar{text-align:center;margin-top:14px;border-bottom:0;}
   .cabecalho__linha{position:relative;min-height:70px;}
 }
+
+/* =========================================================
+   MELHORIAS FUNCIONAIS — ACESSIBILIDADE
+   ========================================================= */
+/* Mostra visualmente qual dos dois botões está controlando o painel. */
+.barra-acessibilidade__menu-btn[aria-expanded="true"],
+.barra-acessibilidade__btn[aria-expanded="true"]{
+  background:rgba(255,255,255,.20);
+  border-radius:8px;
+}
+
+/* Os limites dos controles de fonte são comunicados também visualmente. */
+.barra-acessibilidade__btn:disabled{
+  opacity:.50;
+  cursor:not-allowed;
+}
+
+/* Permite que os quatro atalhos continuem acessíveis quando o texto estiver
+   no maior tamanho suportado pelo portal. */
+.menu-acessibilidade-oculto.ativo{
+  max-height:600px;
+  overflow-y:auto;
+}
+
+/* Evita que os destinos fiquem escondidos atrás das barras fixas/sticky após
+   a rolagem executada pelos atalhos de acessibilidade. */
+#campoBusca,
+#mapa-site,
+#rodape{
+  scroll-margin-top:118px;
+}
+
+/* =========================================================
+   MAPA DO SITE
+   O quarto atalho da barra de acessibilidade aponta para esta seção.
+   ========================================================= */
+.mapa-site{scroll-margin-top:100px;}
+.mapa-site__topo{margin-bottom:28px;}
+.mapa-site__grade{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+.mapa-site__grupo{
+  background:var(--branco);
+  border:1px solid var(--linha);
+  border-radius:var(--raio);
+  padding:22px;
+}
+.mapa-site__grupo h3{
+  color:var(--mar-profundo);
+  font-size:18px;
+  margin-bottom:12px;
+}
+.mapa-site__grupo li + li{margin-top:8px;}
+.mapa-site__grupo a{
+  color:var(--mar);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:underline;
+  text-decoration-color:transparent;
+  text-underline-offset:3px;
+  transition:color .18s ease,text-decoration-color .18s ease;
+}
+.mapa-site__grupo a:hover{
+  color:var(--mar-profundo);
+  text-decoration-color:currentColor;
+}
+
+@media (max-width:1024px){
+  .mapa-site__grade{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:600px){
+  .menu-acessibilidade-oculto.ativo{max-height:70vh;}
+  .menu-acessibilidade-oculto__conteudo{gap:12px;}
+  .menu-acessibilidade-oculto__atalhos{gap:14px;}
+  .atalho-acessibilidade{font-size:15px;}
+  .mapa-site__grade{grid-template-columns:1fr;}
+  .mapa-site__grupo{padding:20px;}
+}

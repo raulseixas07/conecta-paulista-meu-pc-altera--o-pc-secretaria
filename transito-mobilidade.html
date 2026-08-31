@@ -26,7 +26,7 @@
                 <button type="button" class="barra-acessibilidade__btn" id="btnAumentarFonte" aria-label="Aumentar Fonte" title="Aumentar Fonte">A+</button>
                 <button type="button" class="barra-acessibilidade__btn" id="btnResetarFonte" aria-label="Fonte Normal" title="Fonte Normal">A</button>
                 <button type="button" class="barra-acessibilidade__btn" id="btnDiminuirFonte" aria-label="Diminuir Fonte" title="Diminuir Fonte">A-</button>
-                <button type="button" class="barra-acessibilidade__btn barra-acessibilidade__icone-libra" id="btnAcessibilidadeGeral" aria-label="Recursos de Acessibilidade" title="Recursos de Acessibilidade">
+                <button type="button" class="barra-acessibilidade__btn barra-acessibilidade__icone-libra" id="btnAcessibilidadeGeral" aria-label="Recursos de Acessibilidade" title="Recursos de Acessibilidade" aria-expanded="false" aria-controls="menuAcessibilidadeOculto">
                     <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.5 3h5v2h-1.5v7h-2v-7H9.5z"/></svg>
                 </button>
             </div>
@@ -35,12 +35,12 @@
         <!-- MENU OCULTO DE ACESSIBILIDADE -->
         <div class="menu-acessibilidade-oculto" id="menuAcessibilidadeOculto" aria-hidden="true">
             <div class="container menu-acessibilidade-oculto__conteudo">
-                <div class="menu-acessibilidade-oculto__atalhos">
-                    <a href="#conteudo" class="atalho-acessibilidade">Ir para Menu <span class="badge-num">1</span></a>
-                    <a href="#busca" class="atalho-acessibilidade">Ir para Buscador <span class="badge-num">2</span></a>
-                    <a href="#topo" class="atalho-acessibilidade">Ir para Rodapé <span class="badge-num">3</span></a>
-                    <a href="#servicos-municipais" class="atalho-acessibilidade">Ir para o Mapa do Site <span class="badge-num">4</span></a>
-                </div>
+                <nav class="menu-acessibilidade-oculto__atalhos" aria-label="Atalhos de navegação">
+                    <a href="#menuPrincipal" class="atalho-acessibilidade" data-atalho-acessibilidade="menu">Ir para Menu <span class="badge-num" aria-hidden="true">1</span></a>
+                    <a href="index.html#campoBusca" class="atalho-acessibilidade" data-atalho-acessibilidade="busca">Ir para Buscador <span class="badge-num" aria-hidden="true">2</span></a>
+                    <a href="#rodape" class="atalho-acessibilidade" data-atalho-acessibilidade="rodape">Ir para Rodapé <span class="badge-num" aria-hidden="true">3</span></a>
+                    <a href="index.html#mapa-site" class="atalho-acessibilidade" data-atalho-acessibilidade="mapa-site">Ir para o Mapa do Site <span class="badge-num" aria-hidden="true">4</span></a>
+                </nav>
                 <div class="menu-acessibilidade-oculto__topo-acao">
                     <button class="menu-acessibilidade-oculto__fechar" id="btnFecharMenuAcessibilidade" aria-label="Recolher menu">
                         <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 15l-6-6-6 6"/></svg>
@@ -198,7 +198,7 @@
         </div>
     </div>
 
-    <footer class="rodape">
+    <footer class="rodape" id="rodape" tabindex="-1">
         <div class="container">
             <div class="rodape__base">
                 <div class="rodape__base-linha">

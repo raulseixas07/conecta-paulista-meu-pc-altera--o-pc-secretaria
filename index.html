@@ -29,7 +29,7 @@
                 <button type="button" class="barra-acessibilidade__btn" id="btnAumentarFonte" aria-label="Aumentar Fonte" title="Aumentar Fonte">A+</button>
                 <button type="button" class="barra-acessibilidade__btn" id="btnResetarFonte" aria-label="Fonte Normal" title="Fonte Normal">A</button>
                 <button type="button" class="barra-acessibilidade__btn" id="btnDiminuirFonte" aria-label="Diminuir Fonte" title="Diminuir Fonte">A-</button>
-                <button type="button" class="barra-acessibilidade__btn barra-acessibilidade__icone-libra" id="btnAcessibilidadeGeral" aria-label="Recursos de Acessibilidade" title="Recursos de Acessibilidade">
+                <button type="button" class="barra-acessibilidade__btn barra-acessibilidade__icone-libra" id="btnAcessibilidadeGeral" aria-label="Recursos de Acessibilidade" title="Recursos de Acessibilidade" aria-expanded="false" aria-controls="menuAcessibilidadeOculto">
                     <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.5 3h5v2h-1.5v7h-2v-7H9.5z"/></svg>
                 </button>
             </div>
@@ -38,12 +38,12 @@
         <!-- MENU OCULTO DE ACESSIBILIDADE -->
         <div class="menu-acessibilidade-oculto" id="menuAcessibilidadeOculto" aria-hidden="true">
             <div class="container menu-acessibilidade-oculto__conteudo">
-                <div class="menu-acessibilidade-oculto__atalhos">
-                    <a href="#conteudo" class="atalho-acessibilidade">Ir para Menu <span class="badge-num">1</span></a>
-                    <a href="#busca" class="atalho-acessibilidade">Ir para Buscador <span class="badge-num">2</span></a>
-                    <a href="#topo" class="atalho-acessibilidade">Ir para Rodapé <span class="badge-num">3</span></a>
-                    <a href="#servicos-municipais" class="atalho-acessibilidade">Ir para o Mapa do Site <span class="badge-num">4</span></a>
-                </div>
+                <nav class="menu-acessibilidade-oculto__atalhos" aria-label="Atalhos de navegação">
+                    <a href="#menuPrincipal" class="atalho-acessibilidade" data-atalho-acessibilidade="menu">Ir para Menu <span class="badge-num" aria-hidden="true">1</span></a>
+                    <a href="index.html#campoBusca" class="atalho-acessibilidade" data-atalho-acessibilidade="busca">Ir para Buscador <span class="badge-num" aria-hidden="true">2</span></a>
+                    <a href="#rodape" class="atalho-acessibilidade" data-atalho-acessibilidade="rodape">Ir para Rodapé <span class="badge-num" aria-hidden="true">3</span></a>
+                    <a href="index.html#mapa-site" class="atalho-acessibilidade" data-atalho-acessibilidade="mapa-site">Ir para o Mapa do Site <span class="badge-num" aria-hidden="true">4</span></a>
+                </nav>
                 <div class="menu-acessibilidade-oculto__topo-acao">
                     <button class="menu-acessibilidade-oculto__fechar" id="btnFecharMenuAcessibilidade" aria-label="Recolher menu">
                         <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 15l-6-6-6 6"/></svg>
@@ -560,10 +560,62 @@
             </div>
         </section>
 
+        <!-- ===== MAPA DO SITE ===== -->
+        <section class="mapa-site secao secao--fundo" id="mapa-site" tabindex="-1" aria-labelledby="mapa-site-titulo">
+            <div class="container">
+                <header class="secao__topo mapa-site__topo">
+                    <div>
+                        <p class="etiqueta etiqueta--escura">Navegação completa</p>
+                        <h2 class="secao__titulo" id="mapa-site-titulo">Mapa do Site</h2>
+                        <p class="secao__apoio">Acesse rapidamente as principais páginas e serviços do Portal de Serviços.</p>
+                    </div>
+                </header>
+                <nav class="mapa-site__grade" aria-label="Mapa do Site">
+                    <section class="mapa-site__grupo" aria-labelledby="mapa-institucional">
+                        <h3 id="mapa-institucional">Portal</h3>
+                        <ul>
+                            <li><a href="#topo">Página inicial</a></li>
+                            <li><a href="#eventos">Agenda de eventos</a></li>
+                            <li><a href="#destaques">Destaques</a></li>
+                            <li><a href="#sede">A Prefeitura</a></li>
+                        </ul>
+                    </section>
+                    <section class="mapa-site__grupo" aria-labelledby="mapa-servicos">
+                        <h3 id="mapa-servicos">Serviços municipais</h3>
+                        <ul>
+                            <li><a href="#servicos-municipais">Cidadão, servidor e empresas</a></li>
+                            <li><a href="#servicos-essenciais">Serviços públicos essenciais</a></li>
+                            <li><a href="limpeza-urbana.html">Limpeza urbana</a></li>
+                            <li><a href="arvores-areas-verdes.html">Árvores e áreas verdes</a></li>
+                        </ul>
+                    </section>
+                    <section class="mapa-site__grupo" aria-labelledby="mapa-infraestrutura">
+                        <h3 id="mapa-infraestrutura">Infraestrutura</h3>
+                        <ul>
+                            <li><a href="iluminacao-publica.html">Iluminação pública</a></li>
+                            <li><a href="ruas-pavimentacao.html">Ruas e pavimentação</a></li>
+                            <li><a href="drenagem-chuvas.html">Drenagem e chuvas</a></li>
+                            <li><a href="agua-esgoto-saneamento.html">Água, esgoto e saneamento</a></li>
+                            <li><a href="transito-mobilidade.html">Trânsito e mobilidade</a></li>
+                            <li><a href="pracas-parques.html">Praças, parques e espaços públicos</a></li>
+                        </ul>
+                    </section>
+                    <section class="mapa-site__grupo" aria-labelledby="mapa-atendimento">
+                        <h3 id="mapa-atendimento">Atendimento</h3>
+                        <ul>
+                            <li><a href="#campoBusca">Buscar serviço</a></li>
+                            <li><a href="#sede">Central de Atendimento 156</a></li>
+                            <li><a href="#rodape">Política de privacidade</a></li>
+                            <li><a href="#rodape">Termos de uso</a></li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+        </section>
     </main>
 
     <!-- ===== RODAPÉ ===== -->
-    <footer class="rodape">
+    <footer class="rodape" id="rodape" tabindex="-1">
         <div class="container">
             <div class="rodape__base">
                 <div class="rodape__base-linha">
